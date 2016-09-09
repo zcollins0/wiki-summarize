@@ -1,0 +1,1 @@
+First paragraph of wiki article starts with <p>. Sometimes the first <p> is not the first paragraph. In this case, the first <p> will be immediately followed with <span, so it looks like this <p><span id="blah blah blah"></span>.
