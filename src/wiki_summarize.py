@@ -15,32 +15,28 @@ def combine(strs):
         retStr += addStr + " "
     return retStr[:-1]
 
-def main(argv, argc):
-    
-    if argc is 2 and (argv == ['-h'] or argv == ["--help"]):
+def main(argv):
+    print("")
+    if argv[0] == "-h" or argv[0] == "--help":
         usage()
-        return
 
-    for instr in argv:
-        if instr == "-s" or instr == "--search":
-            print("SEARCHING")
+    elif argv[0] == "-s" or argv[0] == "--search":
+        print("SEARCHING")
 
-        elif instr == "-f" or instr == "--first":
-            # Get first article for result
-            print("GETTING FIRST")
+    elif argv[0] == "-f" or argv[0] == "--first":
+        # Get first article for result
+        print("GETTING FIRST")
 
-        elif instr.startswith("-"):
-            print("Invalid argument entered.\n")
-            usage()
+    elif argv[0].startswith("-"):
+        print("Invalid argument entered.\n")
+        usage()
 
-        else:
-            print("DEFAULT BEHAVIOR")
-            wikiStr = combine(argv[1:])
-            wiki_get.summarize(wikiStr)
+    else:
+        wikiStr = combine(argv[:])
+        wiki_get.summarize(wikiStr)
 
 if __name__ == "__main__":
-    argc = len(sys.argv)
-    if argc == 1:
+    if len(sys.argv) == 1:
         usage()
     else:
-        main(sys.argv[1:], argc)
+        main(sys.argv[1:])
