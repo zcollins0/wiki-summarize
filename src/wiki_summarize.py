@@ -36,7 +36,7 @@ def main(argv, argc):
         else:
             print("DEFAULT BEHAVIOR")
             wikiStr = combine(argv[1:])
-            summarize(wikiStr)
+            wiki_get.summarize(wikiStr)
 
 if __name__ == "__main__":
     argc = len(sys.argv)
