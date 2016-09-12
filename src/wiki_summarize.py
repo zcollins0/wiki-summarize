@@ -1,5 +1,5 @@
 import sys
-import wiki-get
+import wiki_get
 
 def usage():
     print("USAGE:")

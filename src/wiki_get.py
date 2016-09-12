@@ -7,7 +7,7 @@ def summarize(topic):
 	except (IndexError, wikipedia.PageError):
 			print("Invalid page... searching")
 			t = wikipedia.search(topic)
-			if(t = []):
+			if(t == []):
 				print("No results match your search.")
 			return(t)
-summarize("squid")
+
