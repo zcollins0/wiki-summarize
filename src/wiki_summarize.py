@@ -10,10 +10,8 @@ def usage():
     print("-h or --help\tView this message")
 
 def combine(strs):
-    retStr = ""
-    for addStr in strs:
-        retStr += addStr + " "
-    return retStr[:-1]
+    retStr = " ".join(strs)
+    return retStr
 
 def main(argv):
     print("")
