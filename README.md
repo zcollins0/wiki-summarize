@@ -1,5 +1,7 @@
 # wiki-summarize
-A simple text-based web scraper that outputs the first paragraph of the Wikipedia article on the input string.
+A python command line program that outputs a wikipedia summary of an input string.
+
+Usage: Use -h or --help.
 
 Dependencies:
 wikipedia
