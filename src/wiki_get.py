@@ -3,13 +3,25 @@ import wikipedia
 def summarize(topic):
 	try:
 		print(wikipedia.summary(topic))
-		return None
+		return []
 	#catch exceptions so users don't see block of error messages	
-	except (IndexError, wikipedia.PageErrori, wikipedia.DisambiguationError):
+	except (IndexError, wikipedia.PageError, wikipedia.DisambiguationError):
 			print("Invalid page. Searching...")
 			t = wikipedia.search(topic)
 			if(t == []):
 				print("No results match your search.")
 			return(t)
+			
+def search(topic):
+	try:
+		t = wikipedia.search(topic)
+		if(t == []):
+			print("No results match your search.")
+		else:
+			print(t)
+		return(t)
+	#catch exceptions so users don't see block of error messages	
+	except (IndexError):
+			print("No results match your search")
 
 
