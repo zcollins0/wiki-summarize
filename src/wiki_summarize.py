@@ -19,8 +19,8 @@ def do_search(strs):
     for s in strs:
         print(s)
 
-    instr = raw_input("Input desired article: ")
-    # wiki.imfeelinglucky(instr)
+    instr = input("Input desired article: ")
+    wiki_get.imFeelingLucky(instr)
 
 def main(argv):
     print("")
@@ -28,7 +28,7 @@ def main(argv):
         usage()
 
     elif argv[0] == "-s" or argv[0] == "--search":
-        wikistr = combine(argv[:])
+        wikiStr = combine(argv[:])
         returned = wiki_get.search(wikiStr)
         if returned != []:
             do_search(returned)
