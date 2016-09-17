@@ -13,15 +13,11 @@ def summarize(topic):
 			return(t)
 			
 def search(topic):
-	try:
-		t = wikipedia.search(topic)
-		if(t == []):
-			print("No results match your search.")
-		else:
-			print(t)
-		return(t)
-	#catch exceptions so users don't see block of error messages	
-	except (IndexError):
-			print("No results match your search")
+	t = wikipedia.search(topic)
+	if(t == []):
+		print("No results match your search.")
+	else:
+		print(t)
+	return(t)
 
 
