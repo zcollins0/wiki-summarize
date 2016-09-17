@@ -13,6 +13,15 @@ def combine(strs):
     retStr = " ".join(strs)
     return retStr
 
+def do_search(strs):
+    arr = []
+    print("Search returned:")
+    for s in strs:
+        print(s)
+
+    instr = raw_input("Input desired article: ")
+    # wiki.imfeelinglucky(instr)
+
 def main(argv):
     print("")
     if argv[0] == "-h" or argv[0] == "--help":
@@ -31,7 +40,9 @@ def main(argv):
 
     else:
         wikiStr = combine(argv[:])
-        wiki_get.summarize(wikiStr)
+        returned = wiki_get.summarize(wikiStr)
+        if returned != []:
+            do_search(returned)
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
