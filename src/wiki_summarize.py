@@ -28,7 +28,10 @@ def main(argv):
         usage()
 
     elif argv[0] == "-s" or argv[0] == "--search":
-        print("SEARCHING")
+        wikistr = combine(argv[:])
+        returned = wiki_get.search(wikiStr)
+        if returned != []:
+            do_search(returned)
 
     elif argv[0] == "-f" or argv[0] == "--first":
         # Get first article for result
