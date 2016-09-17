@@ -20,6 +20,7 @@ def do_search(strs):
         print(s)
 
     instr = input("Input desired article: ")
+	print("")
     wiki_get.imFeelingLucky(instr)
 
 def main(argv):
