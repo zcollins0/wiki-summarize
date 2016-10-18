@@ -39,6 +39,8 @@ def main(argv):
 
     elif argv[0] == "-f" or argv[0] == "--first":
         # Get first article for result
+        wikiStr = combine(argv[:])
+        wiki_get.imFeelingLucky(wikiStr)
 
     elif argv[0].startswith("-"):
         print("Invalid argument entered.\n")
