@@ -6,13 +6,15 @@ def usage():
     print("Argument\tAction")
     print("-s or --search\tGet search results for string and select from list")
     print("-f or --first\tGet first search result (I'm feeling lucky!)")
-    print("no input\tGo to page if it exists, else search")
+    print("no argument\tGo to page if it exists, else search")
     print("-h or --help\tView this message")
 
+# combine a set of strings, space separated
 def combine(strs):
     retStr = " ".join(strs)
     return retStr
 
+# do a search explicitly
 def do_search(strs):
     arr = []
     print("Search returned:")
@@ -29,6 +31,7 @@ def main(argv):
         usage()
 
     elif argv[0] == "-s" or argv[0] == "--search":
+        # combine rest of arguments to form search string
         wikiStr = combine(argv[:])
         returned = wiki_get.search(wikiStr)
         if returned != []:
@@ -36,7 +39,6 @@ def main(argv):
 
     elif argv[0] == "-f" or argv[0] == "--first":
         # Get first article for result
-        print("GETTING FIRST")
 
     elif argv[0].startswith("-"):
         print("Invalid argument entered.\n")
@@ -49,6 +51,7 @@ def main(argv):
             do_search(returned)
 
 if __name__ == "__main__":
+    # no input -> print usage
     if len(sys.argv) == 1:
         usage()
     else:
