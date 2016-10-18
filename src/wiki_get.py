@@ -1,7 +1,4 @@
 import wikipedia
-from bs4 import BeautifulSoup
-w = ""
-soup = BeautifulSoup(w, "html.parser")
 
 def summarize(topic):
 	try:
@@ -34,6 +31,4 @@ def imFeelingLucky(topic):
 			p = wikipedia.page(t[1])
 			print(p.title + ":")
 			print(wikipedia.summary(t[1]))
-
-
 
