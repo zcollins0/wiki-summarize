@@ -1,4 +1,4 @@
-import sys
+iport sys
 import wiki_get
 
 def usage():
@@ -49,6 +49,7 @@ def main(argv):
         usage()
 
     else:
+        # default behavior - summarize, and if it doesn't work, do search behavior
         wikiStr = combine(argv[:])
         returned = wiki_get.summarize(wikiStr)
         if returned != []:
