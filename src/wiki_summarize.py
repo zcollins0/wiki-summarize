@@ -34,6 +34,7 @@ def main(argv):
         # combine rest of arguments to form search string
         wikiStr = combine(argv[:])
         returned = wiki_get.search(wikiStr)
+        # if we get any search results, let user select which article they want to use
         if returned != []:
             do_search(returned)
 
@@ -43,6 +44,7 @@ def main(argv):
         wiki_get.imFeelingLucky(wikiStr)
 
     elif argv[0].startswith("-"):
+        # unrecognized argument, print usage
         print("Invalid argument entered.\n")
         usage()
 
