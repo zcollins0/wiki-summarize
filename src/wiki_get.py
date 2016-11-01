@@ -1,5 +1,6 @@
 import wikipedia
 
+# function to call to summarize. if summarizing doesn't work then search.
 def summarize(topic):
 	try:
 		print(wikipedia.summary(topic))
@@ -11,7 +12,8 @@ def summarize(topic):
 			if(t == []):
 				print("No results match your search.")
 			return(t)
-			
+
+# function to call to search
 def search(topic):
 	t = wikipedia.search(topic)
 	if(t == []):
@@ -20,6 +22,7 @@ def search(topic):
 		print(t)
 	return(t)
 	
+# function to call to get summary, or first search result if that doesn't work
 def imFeelingLucky(topic):
 	try:
 		print(wikipedia.summary(topic))
